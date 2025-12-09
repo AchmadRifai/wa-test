@@ -1,7 +1,12 @@
 import "reflect-metadata";
+import app from '@/routers';
 import { AppDataSource } from "./db";
 import { connctWa } from "./wa";
 
 await AppDataSource.initialize();
 console.log("Hello via Bun!");
 connctWa().catch(console.log);
+
+const PORT = process.env.PORT || '3000';
+
+app.listen(PORT, () => console.log(`🚀 Server is running on port ${PORT}`));
