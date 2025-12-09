@@ -2,7 +2,7 @@ import { getRepository } from "@/models";
 import { WaVersion } from "@/models/wa-version.model";
 import makeWASocket, { Browsers, fetchLatestBaileysVersion, useMultiFileAuthState, type WASocket } from "@whiskeysockets/baileys";
 import { sleep } from "bun";
-import { generate } from 'qrcode-terminal'
+import * as qr from 'qrcode-terminal';
 
 export let sock: WASocket | null = null;
 export let waConnected = false;
@@ -23,7 +23,7 @@ export async function connctWa() {
     sock.ev.on('connection.update', update => {
         if (update.qr) {
             console.log(`QR is : ${update.qr}`);
-            generate(update.qr, { small: true });
+            qr.generate(update.qr, { small: true });
         }
         const { connection } = update;
         if (connection === 'close') {

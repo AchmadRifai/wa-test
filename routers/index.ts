@@ -1,6 +1,7 @@
 import express from 'express';
 import helmet from "helmet";
 import morgan from "morgan";
+import sendWa from './send-wa';
 
 const app = express();
 
@@ -30,6 +31,8 @@ app.use(
 );
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use('/send-wa', sendWa);
 
 app.use((_req, res) => {
     res.status(404).json({ message: "Not Found" });
