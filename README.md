@@ -18,13 +18,13 @@ podman-compose up -d
 docker-compose up -d
 ```
 
-To install dependencies:
+## To install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
+## To run:
 
 ```bash
 bun run index.ts
