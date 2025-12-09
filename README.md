@@ -1,5 +1,19 @@
 # bun-wa
 
+To install container deps:
+
+## if use podman
+
+```bash
+podman-compose up -d
+```
+
+## if use docker
+
+```bash
+docker-compose up -d
+```
+
 To install dependencies:
 
 ```bash
