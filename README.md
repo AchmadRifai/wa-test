@@ -1,4 +1,8 @@
-# bun-wa
+# wa-test
+
+## Installing Bun
+
+please [click here](https://bun.com/)
 
 To install container deps:
 
